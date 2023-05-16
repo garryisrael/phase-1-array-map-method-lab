@@ -1,4 +1,4 @@
-const tutorials = [
+let tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
@@ -11,6 +11,23 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function titleCased(){  
+  const tutorialsCopy = Object.assign([], tutorials)
+  let tutorialsCased = tutorialsCopy.map(function(sentence){
+          let words = sentence.split(' ')
+          let wordsArray = words.map(function(word){
+              let firstCharacter = word.substring(0,1).toUpperCase()
+              let restOfWord = word.substring(1)
+              return(firstCharacter+restOfWord)
+  })
+
+          return wordsArray.join(" ")
+  })
+     tutorials = []
+     tutorials = tutorialsCased
+     return tutorials
 }
+                            
+                                                      
+
+
